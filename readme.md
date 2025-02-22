@@ -9,8 +9,10 @@ This README explains the project's purpose, features, requirements, usage, and h
 ## Motivation
 
 I created BFSMetal to address the "Memory Efficient Backprop" challenge outlined in the Unsloth job posting on X (https://x.com/danielhanchen/status/1891194528931209644). The challenge seeks solutions to reduce VRAM spikes (e.g., 8GB in bfloat16) caused by materializing large logit matrices in LLMs during backpropagation. While BFSMetal focuses on graph traversal, its memory optimization techniques—such as avoiding full data materialization, using efficient data structures (CSR), and leveraging GPU parallelism—can be adapted to tackle similar memory efficiency problems in neural network training, including Unsloth’s goals.
- 
-![Bird Sketch](https://www.researchgate.net/publication/357418189/figure/fig1/AS:1106555248345089@1640834738634/The-Compressed-Sparse-Row-CSR-format-for-representing-sparse-matrices-provides-a.ppm)
+  
+
+![https://www.researchgate.net/figure/The-Compressed-Sparse-Row-CSR-format-for-representing-sparse-matrices-provides-a_fig1_357418189](./assets/The-Compressed-Sparse-Row-CSR-format-for-representing-sparse-matrices-provides-a.ppm.png)
+
 
 This project was developed as a cost-effective alternative to using tools like Cuda, which I couldn’t afford, demonstrating my ability to solve complex technical problems independently.
 
