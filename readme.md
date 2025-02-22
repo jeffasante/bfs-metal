@@ -14,7 +14,7 @@ I created BFSMetal to address the "Memory Efficient Backprop" challenge outlined
 ![https://www.researchgate.net/figure/The-Compressed-Sparse-Row-CSR-format-for-representing-sparse-matrices-provides-a_fig1_357418189](assets/the-compressed-sparse-row-csr-format.png)
 
 
-This project was developed as a cost-effective alternative to using tools like Cuda, which I couldn’t afford, demonstrating my ability to solve complex technical problems independently.
+This project was developed as a cost-effective alternative to using tools like Cuda.
 
 
 ## Features
