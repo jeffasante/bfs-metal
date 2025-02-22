@@ -1,0 +1,62 @@
+flowchart TB
+    subgraph Init ["Initialization Phase"]
+        A[Start] --> B[Graph Representation]
+        B --> C[Initialize in CSR Format]
+        C --> D[Allocate GPU Memory]
+    end
+
+    subgraph Setup ["Setup Phase"]
+        E[Initialize Frontier with Source Node]
+        F[Set up Visited Array]
+        G[Prepare Thread Blocks/Warps]
+    end
+    
+    Init --> Setup
+
+    subgraph MainLoop ["BFS Main Loop"]
+        direction TB
+        H[Current Frontier] --> I{Frontier Empty?}
+        I -->|No| J[Parallel Processing]
+        
+        subgraph Parallel ["Parallel Execution"]
+            direction TB
+            K[Assign Nodes to Threads]
+            L[Read Neighbors]
+            M[Check Visited Status]
+            N[Atomic Updates]
+        end
+        
+        J --> Parallel
+        Parallel --> O[Build Next Frontier]
+        O --> P[Synchronize Threads]
+        P --> Q[Update Level Counter]
+        Q --> H
+    end
+
+    Setup --> MainLoop
+    I -->|Yes| R[End BFS]
+
+    subgraph Optimizations ["Optimization Techniques"]
+        S[Load Balancing]
+        T[Direction Optimization]
+        U[Memory Coalescing]
+        V[Work Distribution]
+    end
+
+    MainLoop -.-> Optimizations
+
+    subgraph Verification ["Verification & Analysis"]
+        W[Correctness Testing]
+        X[Performance Metrics]
+        Y[Compare with CPU]
+        Z[Analyze Scalability]
+    end
+
+    R --> Verification
+
+    style Init fill:#e1f5fe
+    style Setup fill:#e8f5e9
+    style MainLoop fill:#fff3e0
+    style Optimizations fill:#f3e5f5
+    style Verification fill:#fbe9e7
+    style Parallel fill:#fff9c4

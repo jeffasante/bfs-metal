@@ -1,0 +1,64 @@
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved
+xcuserdata/
+DerivedData/
+.DS_Store
+
+# Xcode
+*.xcodeproj
+*.xcworkspace
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcuserstate
+xcuserdata/
+
+# Metal
+*.metallib
+*.air
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+.env
+.venv
+.python-version
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Test artifacts
+test/
+test/action-test/status.log
+*.coverage
+.pytest_cache/
+htmlcov/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS Generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project specific
+*.ppm.png
+combined.txt
+past.md
+tips.md
